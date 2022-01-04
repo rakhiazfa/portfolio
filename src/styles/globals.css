@@ -3,13 +3,35 @@
 @tailwind utilities;
 
 @layer base {
+    *, *::before, *::after {
+        font-family: inherit;
+        font-weight: inherit;
+        @apply tracking-wide;
+    }
+
     body {
-        @apply font-poppins font-light;
+        @apply bg-[#1A1A1A] text-white font-poppins font-light;
     }
 }
 
 @layer components {
     .wrapper {
         @apply w-full lg:max-w-[1140px] xl:max-w-[1280px] 2xl:max-w-[1536px] mx-auto px-4 md:px-12;
+    }
+
+    .btn {
+        @apply focus:outline-none font-normal tracking-[0.075rem] whitespace-nowrap rounded-md;
+    }
+
+    .btn-sm {
+        @apply text-xs px-9 py-2;
+    }
+
+    .btn-md {
+        @apply text-sm px-9 py-2;
+    }
+
+    .btn-lg {
+        @apply text-[0.9rem] px-10 py-2;
     }
 }
