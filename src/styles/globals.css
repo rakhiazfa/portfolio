@@ -10,7 +10,7 @@
     }
 
     body {
-        @apply bg-[#1A1A1A] text-white font-poppins font-light;
+        @apply bg-primary text-[0.95rem] md:text-base text-white font-poppins font-light;
     }
 }
 
