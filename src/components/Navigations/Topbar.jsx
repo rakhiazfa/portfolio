@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Topbar = () => {
     return (
-        <header className="absolute z-[500] w-full h-[75px] flex items-center">
+        <header className="absolute top-0 z-[500] w-full h-[75px] flex items-center">
             <div className="w-full justify-center">
                 <nav>
                     <ul className="flex justify-center items-center gap-10 lg:gap-16">
