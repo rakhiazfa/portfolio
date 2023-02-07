@@ -5,7 +5,10 @@ import Topbar from "../components/Navigations/Topbar";
 
 const Home = () => {
     return (
-        <Layout title="Home - Rakhi Azfa Rifansya" className="relative">
+        <Layout
+            title="Home - Rakhi Azfa Rifansya"
+            className="relative min-h-screen"
+        >
             <Topbar />
 
             <main>
