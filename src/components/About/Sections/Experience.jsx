@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import ExperienceCard from "../ExperienceCard";
 
-import ExperienceLine from "../ExperienceLine";
-
-const educationHistories = [
+const educationExperiences = [
     {
         title: "SMP NEGERI 7 BANDUNG",
         timeSpan: "2017 - 2020",
@@ -13,7 +12,7 @@ const educationHistories = [
     },
 ];
 
-const workHistories = [
+const workExperiences = [
     {
         title: "PT BASIC TEKNOLOGI",
         timeSpan: "July 2022 - Dec 2022",
@@ -25,40 +24,35 @@ const workHistories = [
 ];
 
 const Experience = () => {
-    const experiences = [educationHistories, workHistories];
+    const experiences = [educationExperiences, workExperiences];
 
     const [selected, setSelected] = useState(0);
 
     return (
-        <section className="overflow-x-hidden">
-            <div className="wrapper h-[650px] min-h-screen flex flex-col justify-center items-center">
-                <h1 className="text-2xl font-medium mb-10">Experience</h1>
+        <section className="overflow-x-hidden pt-32">
+            <div className="wrapper">
+                <h1
+                    className="text-4xl lg:text-5xl text-orange-400 font-bold tracking-wider mb-24"
+                    data-aos="fade-right"
+                >
+                    Experiences
+                </h1>
 
-                <div className="bg-gray-800 bg-opacity-50 flex items-center gap-7 rounded-lg mb-10 p-2">
-                    <button
-                        className={`
-                            hover:bg-gray-700 w-[100px] md:w-[125px] text-sm rounded-lg py-2 
-                            ${selected === 0 ? "bg-gray-700" : "bg-gray-800"}
-                        `}
-                        onClick={() => setSelected(0)}
-                    >
-                        Education
-                    </button>
-                    <button
-                        className={`
-                            hover:bg-gray-700 w-[100px] md:w-[125px] text-sm rounded-lg py-2 
-                            ${selected === 1 ? "bg-gray-700" : "bg-gray-800"}
-                        `}
-                        onClick={() => setSelected(1)}
-                    >
-                        Work
-                    </button>
-                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div data-aos="fade-right">
+                        <h2 className="text-xl lg:text-2xl text-center font-semibold mb-16">
+                            Education
+                        </h2>
 
-                <div className="relative">
-                    <div className="absolute left-[50%] transform translate-x-[-50%] top-0 bottom-[-1rem] w-1 bg-white rounded-full"></div>
+                        <ExperienceCard experiences={educationExperiences} />
+                    </div>
+                    <div data-aos="fade-left">
+                        <h2 className="text-xl lg:text-2xl text-center font-semibold mb-16">
+                            Work
+                        </h2>
 
-                    <ExperienceLine experiences={experiences[selected]} />
+                        <ExperienceCard experiences={workExperiences} />
+                    </div>
                 </div>
             </div>
         </section>
