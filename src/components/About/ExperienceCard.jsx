@@ -10,7 +10,11 @@ const ExperienceCard = ({ experiences }) => {
 
                 return (
                     <Fragment key={index}>
-                        <div className="relative bg-gray-800 bg-opacity-50 rounded-lg px-5 py-3">
+                        <div
+                            className="relative bg-gray-800 bg-opacity-50 rounded-lg px-5 py-3"
+                            data-aos={isEven ? "fade-left" : "fade-right"}
+                            data-aos-duration={1250 * (index + 1)}
+                        >
                             <h3 className="mb-3">{experience?.title}</h3>
                             <p className="text-sm text-gray-400">
                                 {experience?.timeSpan}
