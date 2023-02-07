@@ -9,7 +9,7 @@ import {
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen">
+        <section className="relative min-h-screen overflow-hidden">
             <img
                 className="absolute w-full h-full object-cover"
                 src={heroImage}
@@ -19,7 +19,7 @@ const Hero = () => {
             <div className="hero-bg absolute w-full h-full"></div>
 
             <div className="relative wrapper min-h-screen flex items-center">
-                <div>
+                <div data-aos="fade-right">
                     <h1 className="text-[clamp(1.5rem,8vw,3.5rem)] text-white font-extrabold mb-5">
                         Hello, i'm <br /> Rakhi Azfa Rifansya
                     </h1>
