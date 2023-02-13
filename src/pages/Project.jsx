@@ -1,35 +1,8 @@
 import React from "react";
 import Layout from "../components/Layouts/Layout";
 import Topbar from "../components/Navigations/Topbar";
-import myinnovillage from "../assets/images/projects/myinnovillage.png";
-import pertamina from "../assets/images/projects/pertamina.png";
-import roots from "../assets/images/projects/roots.png";
-import groch from "../assets/images/projects/groch.png";
 import { Link } from "react-router-dom";
-
-const projects = [
-    {
-        title: "My Innovillage",
-        image: myinnovillage,
-        desc: "Website to assess an innovation made by students.",
-    },
-    {
-        title: "Pertamina Port Bau Bau",
-        image: pertamina,
-        desc: "Website to manage ship data at the port.",
-    },
-    {
-        title: "The Roots",
-        image: roots,
-        desc: "Website for managing visitor data in restaurants.",
-    },
-    {
-        title: "Groch",
-        image: groch,
-        desc: "Landing page for website course.",
-        to: "https://groch.netlify.app",
-    },
-];
+import projects from "../assets/data/projects";
 
 const Project = () => {
     return (
@@ -57,7 +30,7 @@ const Project = () => {
                                     target="_blank"
                                     key={index}
                                     data-aos="zoom-in"
-                                    data-aos-duration={250 * (index + 1)}
+                                    data-aos-duration={75 * (index + 1)}
                                 >
                                     <img
                                         className="rounded-lg"
