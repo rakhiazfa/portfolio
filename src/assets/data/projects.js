@@ -9,6 +9,7 @@ const projects = [
         title: "My Innovillage",
         image: myinnovillage,
         desc: "Website to assess an innovation made by students.",
+        to: "https://my.innovillage.id/",
     },
     {
         title: "Pertamina Port Bau Bau",
@@ -19,6 +20,7 @@ const projects = [
         title: "The Roots",
         image: roots,
         desc: "Website for managing visitor data in restaurants.",
+        to: "https://goldenmonkeygroup.com/",
     },
     {
         title: "Groch",
@@ -30,6 +32,7 @@ const projects = [
         title: "Lapmas",
         image: lapmas,
         desc: "Community reporting application.",
+        to: "https://lapmas.netlify.app/",
     },
 ];
 
