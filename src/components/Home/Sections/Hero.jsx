@@ -53,7 +53,7 @@ const Hero = () => {
                             <li>
                                 <Link
                                     className="text-3xl lg:text-4xl text-white hover:text-gray-300"
-                                    to="https://www.instagram.com/sensitive.monkey"
+                                    to="https://www.instagram.com/rakhi.azfa"
                                     target="_blank"
                                 >
                                     <AiOutlineInstagram />
