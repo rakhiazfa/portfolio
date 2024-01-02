@@ -5,8 +5,11 @@ const skills = [
     "CSS",
     "JavaScript",
     "PHP",
+    "Node JS",
+    "MySQL",
     "Laravel",
     "React JS",
+    "Vue JS",
     "Bootstrap",
     "Tailwind CSS",
 ];
