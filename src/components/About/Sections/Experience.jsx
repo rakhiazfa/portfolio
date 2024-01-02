@@ -21,6 +21,10 @@ const workExperiences = [
         title: "GREAT WEBSITE STUDIO",
         timeSpan: "Nov 2022 - Jan 2023",
     },
+    {
+        title: "CV. Torche Indonesia",
+        timeSpan: "July 2023 - Now",
+    },
 ];
 
 const Experience = () => {
