@@ -3,6 +3,7 @@ import pertamina from "../images/projects/pertamina.png";
 import roots from "../images/projects/roots.png";
 import groch from "../images/projects/groch.png";
 import lapmas from "../images/projects/lapmas.png";
+import yurishine from "../images/projects/yurishine.png";
 
 const projects = [
     {
@@ -34,6 +35,12 @@ const projects = [
         image: lapmas,
         desc: "Community reporting application.",
         to: "https://lapmas.netlify.app",
+    },
+    {
+        title: "Yurishine",
+        image: yurishine,
+        desc: "Medical record system.",
+        to: "https://github.com/rakhiazfa/yurishine",
     },
 ];
 
