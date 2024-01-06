@@ -18,16 +18,16 @@ const Hero = () => {
 
             <div className="hero-bg absolute w-full h-full"></div>
 
-            <div className="relative wrapper h-[650px] min-h-screen flex items-center">
+            <div className="relative wrapper min-h-screen flex items-center">
                 <div data-aos="fade-right">
-                    <h1 className="text-[clamp(1.5rem,8vw,3.5rem)] text-white font-extrabold mb-5">
+                    <h1 className="text-[clamp(1.5rem,8vw,3rem)] text-white font-extrabold mb-5">
                         Hello,{" "}
                         <span className="text-orange-400 font-extrabold">
                             i'm
                         </span>
                         <br /> Rakhi Azfa Rifansya
                     </h1>
-                    <p className="text-2xl lg:text-3xl text-white mb-10">
+                    <p className="text-xl lg:text-2xl text-white mb-10">
                         Fullstack Developer
                     </p>
                     <div>
