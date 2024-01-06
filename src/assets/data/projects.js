@@ -34,7 +34,7 @@ const projects = [
         title: "Lapmas",
         image: lapmas,
         desc: "Community reporting application.",
-        to: "https://lapmas.netlify.app",
+        to: "https://github.com/rakhiazfa/lapmas",
     },
     {
         title: "Yurishine",
