@@ -4,6 +4,7 @@ import roots from "../images/projects/roots.png";
 import groch from "../images/projects/groch.png";
 import lapmas from "../images/projects/lapmas.png";
 import yurishine from "../images/projects/yurishine.png";
+import weddingInvitation from '../images/projects/wedding-invitation.png';
 
 const projects = [
     {
@@ -23,6 +24,12 @@ const projects = [
         image: roots,
         desc: "Website for managing visitor data in restaurants.",
         to: "https://goldenmonkeygroup.com",
+    },
+    {
+        title: "Wedding Invitation",
+        image: weddingInvitation,
+        desc: "Digital invitation website.",
+        to: "https://github.com/rakhiazfa/wedding-invitation",
     },
     {
         title: "Groch",
