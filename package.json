@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.16.8",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
@@ -16,12 +17,14 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "three": "^0.165.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.165.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
