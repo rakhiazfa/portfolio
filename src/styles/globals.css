@@ -6,6 +6,10 @@
     body {
         @apply bg-dark text-sm text-light font-normal tracking-wider antialiased;
     }
+
+    a, button {
+        @apply transition-all duration-300;
+    }
 }
 
 @layer components {
