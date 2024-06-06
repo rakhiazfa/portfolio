@@ -7,7 +7,5 @@
     "singleQuote": true,
     "tabWidth": 4,
     "trailingComma": "none",
-    "useTabs": false,
-    "vueIndentScriptAndStyle": false,
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "useTabs": false
 }
