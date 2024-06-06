@@ -4,12 +4,12 @@
 
 @layer base {
     body {
-        @apply bg-dark text-sm text-light font-normal antialiased;
+        @apply bg-dark text-sm text-light font-normal tracking-wider antialiased;
     }
 }
 
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
+@layer components {
+    .app-container {
+        @apply w-full md:max-w-[1024px] lg:max-w-[1140px] mx-auto px-5 md:px-[3.25rem];
     }
 }
