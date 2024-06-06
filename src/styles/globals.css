@@ -7,7 +7,8 @@
         @apply bg-dark text-sm text-light font-normal tracking-wider antialiased;
     }
 
-    a, button {
+    a,
+    button {
         @apply transition-all duration-300;
     }
 }
@@ -15,5 +16,12 @@
 @layer components {
     .app-container {
         @apply w-full md:max-w-[1024px] lg:max-w-[1140px] mx-auto px-5 md:px-[3.25rem];
+    }
+
+    .glass {
+        background: rgba(1, 1, 1, 0.76);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10.4px);
+        -webkit-backdrop-filter: blur(10.4px);
     }
 }
