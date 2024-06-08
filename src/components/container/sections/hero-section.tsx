@@ -13,13 +13,20 @@ const HeroSection = () => {
             onMouseLeave={() => setHovered(false)}
         >
             <div className="relative z-[10] app-container flex justify-center items-center">
-                <div>
-                    <h4 className="text-base md:text-lg mb-2">Hello, i'm</h4>
-                    <h1 className="text-[clamp(1.5rem,7.5vw,3.75rem)] font-bold tracking-wide leading-normal mb-2">
-                        Rakhi Azfa Rifansya
-                    </h1>
-                    <h2 className="text-lg sm:text-2xl md:text-3xl">Fullstack Developer</h2>
-                </div>
+                <motion.div
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
+                    <div>
+                        <h4 className="text-base md:text-lg mb-2">Hello, i'm</h4>
+                        <h1 className="text-[clamp(1.5rem,7.5vw,3.75rem)] font-bold tracking-wide leading-normal mb-2">
+                            Rakhi Azfa Rifansya
+                        </h1>
+                        <h2 className="text-lg sm:text-2xl md:text-3xl">Fullstack Developer</h2>
+                    </div>
+                </motion.div>
             </div>
             <AnimatePresence>
                 {hovered && (
@@ -42,6 +49,9 @@ const HeroSection = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Radial gradient for the cute fade */}
+            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
         </section>
     );
 };
