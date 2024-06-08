@@ -17,8 +17,8 @@ const links = [
         name: 'Services'
     },
     {
-        href: '/blog',
-        name: 'Blog'
+        href: '/articles',
+        name: 'Articles'
     },
     {
         href: '/contact',
