@@ -52,8 +52,8 @@ const Topbar = () => {
                     className={`
                         absolute md:static top-[75px] left-0 w-full md:w-max 
                         bg-dark md:bg-transparent border-b md:border-none border-semi-dark 
-                        overflow-hidden transition-all duration-200 
-                        ${active ? 'h-[calc(100vh-75px)] md:h-max' : 'h-0 md:h-max'} 
+                        overflow-hidden transition-all duration-300 
+                        ${active ? 'h-[calc(100vh-75px)] md:h-max opacity-100' : 'h-0 md:h-max opacity-0 md:opacity-100'} 
                     `}
                 >
                     <ul className="flex flex-col md:flex-row md:items-center gap-0 md:gap-10">
