@@ -3,13 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+    html, body {
+        @apply scroll-smooth !overflow-x-hidden;
+    }
+
     body {
-        @apply bg-dark text-sm text-light font-normal tracking-wider antialiased !overflow-x-hidden;
+        @apply bg-dark text-sm text-light font-normal tracking-wider antialiased;
     }
 
     a,
     button {
         @apply transition-all duration-300;
+    }
+
+    ::-webkit-scrollbar {
+        width: 7.5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10rem;
+        
+        @apply bg-semi-dark;
     }
 }
 
