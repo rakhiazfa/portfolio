@@ -5,10 +5,6 @@ import Footer from './footer';
 
 const links = [
     {
-        href: '/about',
-        name: 'About'
-    },
-    {
         href: '/projects',
         name: 'Projects'
     },
@@ -31,9 +27,10 @@ const Topbar = () => {
 
     useEffect(() => {
         if (active) {
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('overflow-y-hidden');
+            document.body.classList.add('md:overflow-y-auto');
         } else {
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('overflow-y-hidden');
         }
     }, [active]);
 

@@ -12,6 +12,7 @@
     "@react-three/fiber": "^8.16.8",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
+    "gsap": "^3.12.5",
     "next": "14.2.3",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",
