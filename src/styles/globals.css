@@ -8,7 +8,7 @@
     }
 
     body {
-        @apply bg-dark text-sm text-light font-normal tracking-wider antialiased;
+        @apply relative h-max overflow-y-hidden bg-dark text-sm text-light font-normal tracking-wider antialiased;
     }
 
     a,
