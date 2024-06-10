@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AboutSection = () => {
     return (
-        <section id="about" className="w-full py-[3.25rem]">
+        <section id="about" className="w-full py-[3.75rem]">
             <div className="app-container">
                 <motion.div
                     initial={{ x: -50, opacity: 0 }}
