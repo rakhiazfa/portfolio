@@ -1,3 +1,4 @@
+import techStack from '@/assets/data/tech-stack';
 import { motion } from 'framer-motion';
 
 const AboutSection = () => {
@@ -32,7 +33,48 @@ const AboutSection = () => {
                     transition={{ duration: 0.85 }}
                     viewport={{ once: true }}
                 >
-                    <h1 className="max-w-[475px] text-xl sm:text-2xl font-bold tracking-wide !leading-[1.35] mb-7">Tech Stack</h1>
+                    <h1 className="max-w-[475px] text-xl sm:text-2xl font-bold tracking-wide !leading-[1.35] mb-10">
+                        Tech Stack
+                    </h1>
+                </motion.div>
+                <motion.div
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.85 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="grid grid-cols-1 gap-10">
+                        <div className="border-b border-semi-dark pb-5">
+                            <h3 className="text-base mb-5">Front-End Development</h3>
+                            <div className="flex items-center gap-5">
+                                {techStack.frontend.map((item, index) => (
+                                    <div key={index} className="bg-semi-dark rounded-full px-3 py-1">
+                                        <span className="text-xs tracking-wider">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="border-b border-semi-dark pb-5">
+                            <h3 className="text-base mb-5">Back-End Development</h3>
+                            <div className="flex items-center gap-5">
+                                {techStack.backend.map((item, index) => (
+                                    <div key={index} className="bg-semi-dark rounded-full px-3 py-1">
+                                        <span className="text-xs tracking-wider">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="border-b border-semi-dark pb-5">
+                            <h3 className="text-base mb-5">Others</h3>
+                            <div className="flex items-center gap-5">
+                                {techStack.etc.map((item, index) => (
+                                    <div key={index} className="bg-semi-dark rounded-full px-3 py-1">
+                                        <span className="text-xs tracking-wider">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </motion.div>
             </div>
         </section>
