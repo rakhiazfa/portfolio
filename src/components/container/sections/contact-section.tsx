@@ -25,8 +25,6 @@ const ContactSection = () => {
     const [open, setOpen] = useState(false);
 
     const onSubmit = async (payload: SendMessagePayload) => {
-        setOpen(true);
-
         try {
             await set(ref(database, 'messages/' + uuidv4()), {
                 ...payload
@@ -35,7 +33,8 @@ const ContactSection = () => {
             console.log(error);
         } finally {
             reset();
-            setTimeout(() => setOpen(false), 1250);
+            setOpen(true);
+            setTimeout(() => setOpen(false), 2500);
         }
     };
 
