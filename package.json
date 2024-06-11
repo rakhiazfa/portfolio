@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.0.2",
     "@react-three/fiber": "^8.16.8",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
