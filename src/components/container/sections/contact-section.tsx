@@ -10,7 +10,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section id="contact" className="w-full py-[4rem]">
+        <section id="contact" className="w-full py-[5rem]">
             <div className="app-container">
                 <motion.div
                     initial={{ x: -50, opacity: 0 }}
