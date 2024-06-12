@@ -9,8 +9,13 @@
 @tailwind utilities;
 
 @layer base {
+    html,
     body {
-        @apply relative h-max bg-dark text-sm text-light font-normal tracking-wider antialiased scroll-smooth !overflow-x-hidden;
+        @apply scroll-smooth !overflow-x-hidden;
+    }
+
+    body {
+        @apply relative h-max overflow-y-hidden bg-dark text-sm text-light font-normal tracking-wider antialiased;
     }
 
     a,

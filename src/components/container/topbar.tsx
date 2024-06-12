@@ -26,12 +26,7 @@ const Topbar = () => {
     const [active, setActive] = useState(false);
 
     useEffect(() => {
-        if (active) {
-            document.body.classList.add('overflow-y-hidden');
-            document.body.classList.add('md:overflow-y-auto');
-        } else {
-            document.body.classList.remove('overflow-y-hidden');
-        }
+        //
     }, [active]);
 
     return (
