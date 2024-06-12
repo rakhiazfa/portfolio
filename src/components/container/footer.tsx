@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = ({ className }: { className?: string }) => {
     return (
-        <footer className={`relative z-[10000] w-full bg-dark border-t border-semi-dark py-10 ${className ?? ''}`}>
+        <footer className={`relative z-[9999] w-full bg-dark border-t border-semi-dark py-10 ${className ?? ''}`}>
             <div className="app-container">
                 <div className="flex flex-wrap justify-between items-center gap-x-10 gap-y-7">
                     <p className="text-xs text-semi-light">Copyright &copy; 2024, Rakhi Azfa Rifansya</p>
