@@ -38,7 +38,7 @@ const ContactSection = () => {
             setLoading(false);
 
             setOpen(true);
-            setTimeout(() => setOpen(false), 2500);
+            setTimeout(() => setOpen(false), 12500);
         }
     };
 
@@ -105,7 +105,7 @@ const ContactSection = () => {
             <Toast.Provider swipeDirection="right">
                 <Toast.Root className="ToastRoot" open={open} onOpenChange={setOpen}>
                     <Toast.Description asChild>
-                        <p className="text-dark">Successfully sent the message.</p>
+                        <p className="text-dark mt-[0.125rem]">Successfully sent the message.</p>
                     </Toast.Description>
                     <Toast.Action className="ToastAction" asChild altText="Goto close toast">
                         <button className="Button small green">Close</button>
