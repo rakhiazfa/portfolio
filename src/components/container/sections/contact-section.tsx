@@ -22,9 +22,11 @@ const ContactSection = () => {
         formState: { errors },
         reset
     } = useForm<SendMessagePayload>();
+    const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
 
     const onSubmit = async (payload: SendMessagePayload) => {
+        setLoading(true);
         try {
             await set(ref(database, 'messages/' + uuidv4()), {
                 ...payload
@@ -33,6 +35,8 @@ const ContactSection = () => {
             console.log(error);
         } finally {
             reset();
+            setLoading(false);
+
             setOpen(true);
             setTimeout(() => setOpen(false), 2500);
         }
@@ -88,6 +92,7 @@ const ContactSection = () => {
                                         containerClassName="rounded-full"
                                         as="button"
                                         className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+                                        loading={loading}
                                     >
                                         <span>Send Message</span>
                                     </HoverBorderGradient>

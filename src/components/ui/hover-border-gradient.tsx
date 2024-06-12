@@ -12,6 +12,7 @@ export function HoverBorderGradient({
     as: Tag = 'button',
     duration = 1,
     clockwise = true,
+    loading = false,
     ...props
 }: React.PropsWithChildren<
     {
@@ -20,6 +21,7 @@ export function HoverBorderGradient({
         className?: string;
         duration?: number;
         clockwise?: boolean;
+        loading?: boolean;
     } & React.HTMLAttributes<HTMLElement>
 >) {
     const [hovered, setHovered] = useState<boolean>(false);
@@ -58,9 +60,10 @@ export function HoverBorderGradient({
             }}
             onMouseLeave={() => setHovered(false)}
             className={cn(
-                'relative flex rounded-full border  content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit',
+                'relative flex rounded-full border  content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit disabled:pointer-events-none disabled:opacity-50',
                 containerClassName
             )}
+            disabled={loading}
             {...props}
         >
             <div className={cn('w-auto text-white z-10 bg-black px-4 py-2 rounded-[inherit]', className)}>{children}</div>
