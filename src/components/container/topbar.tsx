@@ -26,7 +26,17 @@ const Topbar = () => {
     const [active, setActive] = useState(false);
 
     useEffect(() => {
-        //
+        if (active) {
+            document.querySelector('html')?.classList.add('overflow-y-hidden');
+            document.querySelector('html')?.classList.add('md:overflow-y-auto');
+
+            document.body.classList.add('overflow-y-hidden');
+        } else {
+            document.querySelector('html')?.classList.remove('overflow-y-hidden');
+            document.querySelector('html')?.classList.remove('md:overflow-y-auto');
+
+            document.body.classList.remove('overflow-y-hidden');
+        }
     }, [active]);
 
     return (
