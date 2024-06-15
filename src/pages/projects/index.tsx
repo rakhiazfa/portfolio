@@ -1,5 +1,6 @@
-import { database } from '@/services/firebase';
+import { database, storage } from '@/services/firebase';
 import { get, ref as databaseRef } from 'firebase/database';
+import { getDownloadURL, ref as storageRef } from 'firebase/storage';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -18,7 +19,7 @@ export default function Projects({ projects }: { projects: any[] }) {
                             Projects
                         </h1>
                     </motion.div>
-                    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-7 md:gap-x-10 gap-y-10">
                         {projects.map((project, index) => (
                             <motion.div
                                 key={index}
@@ -28,19 +29,22 @@ export default function Projects({ projects }: { projects: any[] }) {
                                 viewport={{ once: true }}
                             >
                                 <div className="w-full">
-                                    <div className="relative w-full aspect-[4/2] bg-gray-300 rounded-lg">
+                                    <div className="relative w-full aspect-[4/2] bg-gray-300">
                                         <Image
-                                            src={`/images/projects/${project.image}`}
+                                            src={project.image}
                                             width={0}
                                             height={0}
                                             sizes="100vw"
-                                            className="w-full h-auto object-cover rounded-lg"
+                                            className="w-full h-auto object-cover"
                                             alt={project.title}
                                             priority={true}
                                         />
+                                        <div className="absolute inset-0 top-0 left-0 shadow-[inset_2.5px_2.5px_25px_rgba(0,0,0,0.75)]"></div>
                                     </div>
-                                    <div className="px-2 py-5">
-                                        <h1 className="text-base font-bold tracking-wider mb-3">{project.title}</h1>
+                                    <div className="mt-5">
+                                        <h1 className="text-lg sm:text-2xl md:text-[clamp(0.95rem,2vw,1.35rem)] font-bold tracking-widest leading-normal mb-3">
+                                            {project.title}
+                                        </h1>
                                     </div>
                                 </div>
                             </motion.div>
@@ -55,9 +59,20 @@ export default function Projects({ projects }: { projects: any[] }) {
 export async function getStaticProps() {
     const snapshot = await get(databaseRef(database, 'projects'));
     const data = snapshot.exists() ? snapshot.val() : {};
-    const projects = Object.keys(data).map((key) => {
-        return data[key];
-    });
+    const projects = await Promise.all(
+        Object.keys(data)
+            .map((key) => {
+                return data[key];
+            })
+            .map(async (project) => {
+                const imageUrl = await getDownloadURL(storageRef(storage, `projects/${project?.image}`));
+
+                return {
+                    ...project,
+                    image: imageUrl
+                };
+            })
+    );
 
     return { props: { projects } };
 }
