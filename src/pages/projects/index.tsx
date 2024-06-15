@@ -1,6 +1,5 @@
-import { database, storage } from '@/services/firebase';
+import { database } from '@/services/firebase';
 import { get, ref as databaseRef } from 'firebase/database';
-import { getDownloadURL, ref as storageRef } from 'firebase/storage';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -31,12 +30,13 @@ export default function Projects({ projects }: { projects: any[] }) {
                                 <div className="w-full">
                                     <div className="relative w-full aspect-[4/2] bg-gray-300 rounded-lg">
                                         <Image
-                                            src={project.image}
+                                            src={`/images/projects/${project.image}`}
                                             width={0}
                                             height={0}
                                             sizes="100vw"
                                             className="w-full h-auto object-cover rounded-lg"
                                             alt={project.title}
+                                            priority={true}
                                         />
                                     </div>
                                     <div className="px-3 py-5">
@@ -55,20 +55,9 @@ export default function Projects({ projects }: { projects: any[] }) {
 export async function getStaticProps() {
     const snapshot = await get(databaseRef(database, 'projects'));
     const data = snapshot.exists() ? snapshot.val() : {};
-    const projects = await Promise.all(
-        Object.keys(data)
-            .map((key) => {
-                return data[key];
-            })
-            .map(async (project) => {
-                const imageUrl = await getDownloadURL(storageRef(storage, `projects/${project?.image}`));
-
-                return {
-                    ...project,
-                    image: imageUrl
-                };
-            })
-    );
+    const projects = Object.keys(data).map((key) => {
+        return data[key];
+    });
 
     return { props: { projects } };
 }
