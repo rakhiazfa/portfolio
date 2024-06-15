@@ -14,11 +14,11 @@ export default function Projects({ projects }: { projects: any[] }) {
                         transition={{ duration: 0.85 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="max-w-[475px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide !leading-[1.35] mb-10">
+                        <h1 className="max-w-[475px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide !leading-[1.35] mb-20">
                             Projects
                         </h1>
                     </motion.div>
-                    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                         {projects.map((project, index) => (
                             <motion.div
                                 key={index}
@@ -39,8 +39,8 @@ export default function Projects({ projects }: { projects: any[] }) {
                                             priority={true}
                                         />
                                     </div>
-                                    <div className="px-3 py-5">
-                                        <h1 className="text-2xl font-bold tracking-wider mb-3">{project.title}</h1>
+                                    <div className="px-2 py-5">
+                                        <h1 className="text-base font-bold tracking-wider mb-3">{project.title}</h1>
                                     </div>
                                 </div>
                             </motion.div>
