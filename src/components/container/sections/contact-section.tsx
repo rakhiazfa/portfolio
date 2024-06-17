@@ -1,3 +1,5 @@
+'use client';
+
 import { InputField } from '@/components/ui/input-field';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { motion } from 'framer-motion';
@@ -8,6 +10,7 @@ import { database } from '@/services/firebase';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import * as Toast from '@radix-ui/react-toast';
+import Title from '@/components/ui/title';
 
 type SendMessagePayload = {
     name: string;
@@ -46,15 +49,13 @@ const ContactSection = () => {
         <>
             <section id="contact" className="w-full py-[5rem]">
                 <div className="app-container">
+                    <Title className="mb-10">Contact Me</Title>
                     <motion.div
                         initial={{ x: -50, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="max-w-[475px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide !leading-[1.35] mb-7">
-                            Contact Me
-                        </h1>
                         <div>
                             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-7">
                                 <div className="flex flex-col md:flex-row items-center gap-5">

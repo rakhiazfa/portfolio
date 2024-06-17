@@ -1,3 +1,5 @@
+'use client';
+
 import cn from '@/utils/cn';
 import { Label } from '@radix-ui/react-label';
 import { forwardRef, useId } from 'react';

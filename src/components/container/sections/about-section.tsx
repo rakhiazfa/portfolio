@@ -1,20 +1,14 @@
+'use client';
+
 import techStack from '@/assets/data/tech-stack';
+import Title from '@/components/ui/title';
 import { motion } from 'framer-motion';
 
 const AboutSection = () => {
     return (
         <section id="about" className="w-full py-[5rem]">
             <div className="app-container">
-                <motion.div
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.85 }}
-                    viewport={{ once: true }}
-                >
-                    <h1 className="max-w-[475px] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide !leading-[1.35] mb-7">
-                        Let's Find Out About Me
-                    </h1>
-                </motion.div>
+                <Title className="mb-10">Let's Find Out About Me</Title>
                 <motion.div
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
