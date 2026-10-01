@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getSettings, t, SITE_URL } from "@/lib/data";
 import { SocialLinks } from "@/components/ui";
+import { MobileNav } from "@/components/mobile-nav";
 
 const NAV = [
   ["/projects", "Projects"],
@@ -28,18 +29,19 @@ export default async function PublicLayout({ children }: LayoutProps<"/">) {
         Skip to content
       </a>
       <header className="sticky top-0 z-40 border-b border-line bg-background/85 backdrop-blur">
-        <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-5 gap-y-2 px-4 py-3 text-sm">
+        <nav className="mx-auto flex max-w-5xl items-center gap-x-5 px-4 py-3 text-sm">
           <Link href="/" className="mr-auto font-semibold">
             rakhiazfa<span className="text-accent">.dev</span>
           </Link>
           {NAV.map(([href, label]) => (
-            <Link key={href} href={href} className="text-muted hover:text-foreground">
+            <Link key={href} href={href} className="hidden text-muted hover:text-foreground sm:block">
               {label}
             </Link>
           ))}
           <a href="/cv" className="btn !px-3 !py-1.5">
             Download CV
           </a>
+          <MobileNav items={NAV} />
         </nav>
       </header>
       <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 sm:py-16">
